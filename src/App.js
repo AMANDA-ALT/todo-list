@@ -12,10 +12,33 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const handleSubmit = (e) => {
+
+  }
+
 
   return (
     <div className="App">
-      <h1>To do list</h1>
+      <div className='header-todo'>
+        <h1>React Todo</h1>
+      </div>
+
+      <div className='form-todo'>
+        <h2>Insert your next task:</h2>
+        <form onSubmit={handleSubmit}>
+          <input type='submit' value='Send' />
+
+        </form>
+      </div>
+
+      <div className='list-todo'>
+        <h2>Task List:</h2>
+        {todos.length === 0 && <p>There are no tasks!</p>}
+      </div>
+
+    
+
+
     </div>
   );
 }
