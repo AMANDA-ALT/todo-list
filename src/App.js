@@ -14,10 +14,19 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(title);
+    const todo = {
+      id: Math.random(),
+      title,
+      time,
+      done:false,
+    };
+
+    //Sent to API
+    console.log(todo);
 
     setTitle("");
-    console.log("Sent");
+    setTime("");
+    
   };
 
   return (
@@ -29,6 +38,7 @@ function App() {
       <div className="form-todo">
         <h2>Insert your next task:</h2>
         <form onSubmit={handleSubmit}>
+          
           <div className="form-control">
             <label htmlFor="title">What you gonna do?</label>
             <input
